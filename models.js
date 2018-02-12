@@ -3,10 +3,10 @@ const cassandraUri = process.env.CASSANDRA_URI || '127.0.0.1';
 const cassandraPort = process.env.CASSANDRA_PORT || 9042;
 const keyspace = process.env.KEYSPACE || 'events';
 
-const OrdersNewOrderModel = require('../models/OrdersNewOrderModel');
-const PrimeTrialSignupModel = require('../models/PrimeTrialSignupModel');
-const PrimeTrialOptoutModel = require('../models/PrimeTrialOptoutModel');
-const CountersModel = require('../models/CountersModel');
+const OrdersNewOrderModel = require('./models/OrdersNewOrderModel');
+const PrimeTrialSignupModel = require('./models/PrimeTrialSignupModel');
+const PrimeTrialOptoutModel = require('./models/PrimeTrialOptoutModel');
+const CountersModel = require('./models/CountersModel');
 
 //Tell express-cassandra to use the models-directory, and
 //use bind() to load the models using cassandra configurations.
