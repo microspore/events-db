@@ -3,3 +3,6 @@
 
 # Generated Scripts
 scripts/fixtures
+
+# Dockerfile
+Dockerfile
