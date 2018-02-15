@@ -58,10 +58,6 @@ let sendMessages = function() {
   let orderId = Math.floor(Math.random() * NUM_ORDERS * 1000);
   let userId = users[Math.floor(Math.random() * NUM_USERS)];
   let amount = Math.floor(Math.random() * 1500);
-
-  year = 2017;
-  month.number = 11;
-  day = 8;
   
   //create order
   let order = {
