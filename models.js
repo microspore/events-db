@@ -3,6 +3,16 @@ const cassandraUri = process.env.CASSANDRA_URI || '127.0.0.1';
 const cassandraPort = process.env.CASSANDRA_PORT || 9042;
 const keyspace = process.env.KEYSPACE || 'events';
 
+var contactPoints = [cassandraUri];
+
+if (process.env.CASSANDRA2_URI) {
+  contactPoints.push(process.env.CASSANDRA2_URI);
+}
+
+if (process.env.CASSANDRA3_URI) {
+  contactPoints.push(process.env.CASSANDRA3_URI);
+}
+
 const OrdersNewOrderModel = require('./models/OrdersNewOrderModel');
 const PrimeTrialSignupModel = require('./models/PrimeTrialSignupModel');
 const PrimeTrialOptoutModel = require('./models/PrimeTrialOptoutModel');
@@ -13,7 +23,7 @@ const CountersModel = require('./models/CountersModel');
 console.log('Keyspace', keyspace);
 var models = ExpressCassandra.createClient({
   clientOptions: {
-    contactPoints: [cassandraUri],
+    contactPoints: contactPoints,
     protocolOptions: { port: cassandraPort },
     keyspace: keyspace,
     queryOptions: { consistency: ExpressCassandra.consistencies.one }
