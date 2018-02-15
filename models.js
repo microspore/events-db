@@ -13,7 +13,7 @@ const CountersModel = require('./models/CountersModel');
 console.log('Keyspace', keyspace);
 var models = ExpressCassandra.createClient({
   clientOptions: {
-    contactPoints: ['cassandra1'],
+    contactPoints: [cassandraUri],
     protocolOptions: { port: cassandraPort },
     keyspace: keyspace,
     queryOptions: { consistency: ExpressCassandra.consistencies.one }
