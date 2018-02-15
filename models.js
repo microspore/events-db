@@ -71,7 +71,7 @@ var CountersHistogramDay = models.loadSchema('countershistogramday', CountersMod
   await CountersHistogramDay.syncDBAsync().catch(err => console.log(err));
 })();
 
-console.log(`Connected to Cassandra on ${cassandraUri}:${cassandraPort}`);
+console.log(`Connected to Cassandra on ${contactPoints}:${cassandraPort}`);
 console.log(`Using ${keyspace} keyspace`);
 
 module.exports = {
